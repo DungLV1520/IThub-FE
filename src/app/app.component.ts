@@ -11,7 +11,7 @@ import { Router, NavigationEnd } from "@angular/router";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = "bitakon";
+  title = "Ulink";
   themeSetting: boolean = false;
 
   handleThemeSetting() {
