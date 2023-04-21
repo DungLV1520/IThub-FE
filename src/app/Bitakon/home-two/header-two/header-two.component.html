@@ -1,0 +1,134 @@
+<header>
+  <div
+    id="header-sticky"
+    [ngClass]="
+      headerSticky
+        ? 'header__area header__padding header__transparent header__style-2 header__border header__sticky header-sticky'
+        : 'header__area header__padding header__transparent header__style-2 header__border header__sticky'
+    "
+  >
+    <div class="container">
+      <div class="header__wrapper p-relative">
+        <div class="row align-items-center">
+          <div class="col-xxl-1 col-xl-1 col-lg-2 col-md-6 col-4">
+            <div class="logo header__logo">
+              <a [routerLink]="['/']">
+                <img
+                  style="width: 111px"
+                  class="logo-white"
+                  src="assets/img/logo/logo.png"
+                  alt="logo"
+                />
+                <img
+                  style="width: 111px"
+                  class="logo-black"
+                  src="assets/img/logo/logo.png"
+                  alt="logo"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-xxl-8 col-xl-8 col-lg-5 d-none d-lg-block">
+            <div class="header__menu-wrapper d-flex align-items-center ml-10">
+              <div class="main-menu">
+                <nav id="mobile-menu" class="d-none d-xl-block">
+                  <ul>
+                    <!-- <li>
+                      <a [routerLink]="['/']">Home</a>
+                    </li> -->
+                    <!-- <li class="has-dropdown megamenu-full">
+                      <a [routerLink]="['/about']">Pages</a>
+                      <ul class="megamenu">
+                        <li><a [routerLink]="['/about']">About</a></li>
+                        <li><a [routerLink]="['/login']">Login</a></li>
+                        <li><a [routerLink]="['/creator']">Creators</a></li>
+
+                        <li><a [routerLink]="['/contact']">Contact Us</a></li>
+                        <li><a [routerLink]="['/register']">Register</a></li>
+
+                        <li><a [routerLink]="['/activity']">Activity</a></li>
+                        <li>
+                          <a [routerLink]="['/forget']">Forget Password</a>
+                        </li>
+
+                        <li>
+                          <a [routerLink]="['/edit-profile']">Edit Profile</a>
+                        </li>
+                        <li><a [routerLink]="['/support']">Support/FAQ</a></li>
+
+                        <li>
+                          <a [routerLink]="['/maintaince']">Maintanance</a>
+                        </li>
+
+                        <li>
+                          <a [routerLink]="['/upcoming']">Upcoming Projects</a>
+                        </li>
+                        <li>
+                          <a [routerLink]="['/coming-soon']">Coming Soon</a>
+                        </li>
+                        <li><a [routerLink]="['/404']">404 Error</a></li>
+                      </ul>
+                    </li> -->
+
+                    <!-- <li>
+                      <a [routerLink]="['/profile']">Profile</a>
+                    </li> -->
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="col-xxl-3 col-xl-3 col-lg-5 col-md-6 col-8">
+            <div
+              class="header__right-wrapper d-flex justify-content-end align-items-center"
+            >
+              <div
+                class="header__right d-none d-sm-flex justify-content-end align-items-center"
+              >
+                <div>
+                  <a [routerLink]="['/about']"><b>About</b></a>
+                </div>
+              </div>
+              <div
+                class="header__wallet-wrapper d-none d-sm-flex"
+                id="header__user"
+              >
+                <div class="header__wallet ml-30">
+                  <a class="header__wallet-btn" id="connectbtn">
+                    <svg viewBox="0 0 19 16">
+                      <path
+                        d="M17.5 5.83333V10.1667C17.5 13.5 15.9 14.5 13.5 14.5H5.5C2.5 14.5 1.5 13 1.5 10.1667V5.83333C1.5 3 2.5 2 4.852 1.552C5.06 1.51733 5.276 1.5 5.5 1.5H13.5C13.708 1.5 13.908 1.50866 14.1 1.54332C16.5 2 17.5 3 17.5 5.83333Z"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M9 5.03314H5"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M17.2998 5.75061H14.8998C14.0198 5.75061 13.2998 6.65061 13.2998 7.75061C13.2998 8.85061 14.0198 9.75061 14.8998 9.75061H17.2998"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Create URL
+                  </a>
+                </div>
+                <div class="header__user ml-10">
+                  <a [routerLink]="['/profile']"> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

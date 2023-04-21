@@ -1,0 +1,138 @@
+<section class="slider__area pt-80 pb-70 p-relative fix">
+  <app-marque-text-area></app-marque-text-area>
+  <div class="slider__shape">
+    <img
+      class="slider__shape-1"
+      src="assets/img/slider/2/slider-shape-1.png"
+      alt=""
+    />
+    <img
+      class="slider__shape-2"
+      src="assets/img/slider/2/slider-shape-2.png"
+      alt=""
+    />
+  </div>
+  <div class="slider__active-2 slider__bid-area">
+    <swiper
+      [loop]="true"
+      [effect]="'fade'"
+      [navigation]="{
+        nextEl: '.slick-next',
+        prevEl: '.slick-prev'
+      }"
+      [breakpoints]="{
+        '768': {
+          slidesPerView: 1,
+          spaceBetween: 30
+        }
+      }"
+    >
+      <ng-template swiperSlide>
+        <div class="slider__height-2 d-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-xxl-6 col-xl-6 col-lg-6">
+                <div class="slider__content-2">
+                  <h4 class="slider__title-2">
+                    Make your <span>URL </span> Amazing & Unique with
+                    <span class="has-shape"
+                      >ULink.asia
+                      <img
+                        class="slider-title-shape"
+                        src="assets/img/icon/slider-stoke-shape.svg"
+                        alt=""
+                      />
+                    </span>
+                  </h4>
+                  <div class="sidebar__widget mb-25">
+                    <h3 class="sidebar__widget-title">Features</h3>
+                    <div class="sidebar__widget-content">
+                      <div class="tagcloud">
+                        <a href="#">Short link</a>
+                        <a href="#">Fake preview facebook</a>
+                        <a href="#">Workchat</a>
+                        <a href="#">Software</a>
+                        <a href="#">Support pass param to destination link</a>
+                      </div>
+                    </div>
+                    <h3 class="sidebar__widget-title mt-3">Upcoming version</h3>
+                    <div class="sidebar__widget-content">
+                      <div class="tagcloud">
+                        <a href="#">Tracking browser</a>
+                        <a href="#">Country</a>
+                        <a href="#">Count click</a>
+                        <a href="#">Software</a>
+                        <a href="#">Protect url with password</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-6 col-xl-6 col-lg-6">
+                <div class="slider__bid-item pl-70">
+                  <img
+                    class="slider__shape-3"
+                    src="assets/img/slider/2/slider-shape-3.png"
+                    alt=""
+                  />
+                  <div class="slider__bid-thumb">
+                    <img src="assets/img/slider/2/slider-2.jpg" alt="" />
+                  </div>
+                  <div class="slider__bid-content">
+                    <div class="slider__bid-top">
+                      <h3>Contact</h3>
+                    </div>
+                    <div class="slider__bid-info">
+                      <div class="slider__bid-popularity">
+                        <a href="#"><i class="fa-solid fa-heart"></i></a>
+                      </div>
+                      <div class="slider__bid-collection">
+                        <div class="slider__bid-user d-flex align-items-center">
+                          <div class="footer__social footer__social-2">
+                            <a href="#"
+                              ><i class="fa-brands fa-facebook-f"></i
+                            ></a>
+                          </div>
+                          <div class="slider__bid-user-content mx-2">
+                            <h3>ULink</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slider__bid-collection">
+                        <div class="slider__bid-user d-flex align-items-center">
+                          <div class="footer__social footer__social-2">
+                            <a href="#"
+                              ><i class="fa-brands fa-telegram"></i
+                            ></a>
+                          </div>
+                          <div class="slider__bid-user-content mx-2">
+                            <h3>ULink</h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider__bid-btn">
+                      <button
+                        type="button"
+                        [routerLink]="['/create-multiple']"
+                        class="slider-bid-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#bidmodal"
+                      >
+                        <img
+                          src="assets/img/icon/activity/activity-bid.svg"
+                          alt=""
+                        />
+                        Create URL <i class="fa-regular fa-arrow-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </swiper>
+  </div>
+</section>
