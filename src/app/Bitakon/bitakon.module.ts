@@ -60,6 +60,7 @@ import { ErrorPageMainComponent } from "./error-page/error-page-main/error-page-
 import { ProfileMainComponent } from "./profile/profile-main/profile-main.component";
 import { ProfileAreaComponent } from "./profile/profile-area/profile-area.component";
 import { CommonFooterComponent } from "./Common/common-footer/common-footer.component";
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   imports: [
@@ -68,6 +69,7 @@ import { CommonFooterComponent } from "./Common/common-footer/common-footer.comp
     MatSelectModule,
     MatSliderModule,
     RouterModule,
+    MatDialogModule,
     NgxSliderModule,
     FormsModule,
     MetismenuAngularModule,

@@ -8,7 +8,14 @@
             <h3 class="create__preview-title">Preview</h3>
             <div class="nft__box-thumb w-img mb-20">
               <a [routerLink]="['/product-details']">
-                <img src="assets/img/bid/2/bid-img-1.jpg" alt="" />
+                <img
+                  src="assets/img/bid/2/bid-img-1.jpg"
+                  alt=""
+                  *ngIf="previews.length === 0; else notcheck"
+                />
+                <ng-template #notcheck>
+                  <img *ngFor="let preview of previews" [src]="preview" />
+                </ng-template>
               </a>
               <div class="nft__box-popularity">
                 <a [routerLink]="['/product-details']"
@@ -21,9 +28,13 @@
                 class="nft__box-content-top d-flex align-items-center justify-content-between"
               >
                 <h3 class="nft__box-title">
-                  <a [routerLink]="['/product-details']">Result Link</a>
+                  <a>Result Link</a>
                 </h3>
-                <div class="nft__box-trending-icon" style="cursor: pointer">
+                <div
+                  class="nft__box-trending-icon"
+                  style="cursor: pointer"
+                  (click)="copyMessage(text)"
+                >
                   <span><i class="fa-solid fa-copy"></i></span>
                 </div>
               </div>
@@ -33,13 +44,14 @@
             >
               <div class="nft__box-highest w-100">
                 <div class="create__input">
-                  <textarea placeholder="Copy result Link"></textarea>
+                  <textarea placeholder="Copy result Link" #text></textarea>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="col-xxl-8 col-xl-8 col-lg-8">
         <div class="create__form pt-55 pb-120">
           <form action="#">
@@ -61,7 +73,11 @@
                     <div class="create__upload text-center">
                       <p>JPG, PNG, GIF Max 5mb.</p>
                       <label for="input-file-2">Select a file</label>
-                      <input id="input-file-2" type="file" />
+                      <input
+                        id="input-file-2"
+                        type="file"
+                        (change)="selectFiles($event)"
+                      />
                     </div>
                   </div>
                   <div class="col-xxl-12">
@@ -76,9 +92,7 @@
                     <div class="create__input-box">
                       <h4>Description</h4>
                       <div class="create__input mt-2">
-                        <textarea
-                          placeholder="Enter the NFT's Description"
-                        ></textarea>
+                        <textarea placeholder="Enter description"></textarea>
                       </div>
                     </div>
                   </div>

@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-contact-area',
-  templateUrl: './contact-area.component.html',
-  styleUrls: ['./contact-area.component.scss']
+  selector: "app-contact-area",
+  templateUrl: "./contact-area.component.html",
+  styleUrls: ["./contact-area.component.scss"],
 })
 export class ContactAreaComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
