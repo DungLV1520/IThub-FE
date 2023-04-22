@@ -151,7 +151,7 @@ export class ShortLinkAreaComponent implements OnInit {
             position: "top-center",
           });
 
-          this.copyToClipboard(this.urlULink);
+          this.copyToClipboard();
         },
         error: (error) => {
           toastRef.close();
@@ -186,17 +186,10 @@ export class ShortLinkAreaComponent implements OnInit {
     }
   }
 
-  copyToClipboard(content: string) {
-    this.clipboard.copy(content);
-  }
-
-  copyMessage(inputElement: any) {
-    inputElement.select();
-    document.execCommand("copy");
-    inputElement.setSelectionRange(0, 0);
-    this.toast.success("Copy URL is successfull", {
-      dismissible: true,
-      duration: 1000,
+  copyToClipboard() {
+    this.clipboard.copy(this.urlULink);
+    this.toast.success("Copy is successfull", {
+      duration: 3000,
       position: "top-center",
     });
   }
