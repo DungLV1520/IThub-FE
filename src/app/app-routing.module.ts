@@ -1,16 +1,17 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { HomeTwoMainComponent } from "./Bitakon/home-two/home-two-main/home-two-main.component";
-import { AboutMainComponent } from "./Bitakon/about/about-main/about-main.component";
-import { CreateMultipleMainComponent } from "./Bitakon/create-multiple/create-multiple-main/create-multiple-main.component";
-import { ErrorPageMainComponent } from "./Bitakon/error-page/error-page-main/error-page-main.component";
+import { AboutMainComponent } from "./entities/about/about-main/about-main.component";
+import { HomeMainComponent } from "./entities/home/home-main/home-main.component";
+import { ShortLinkMainComponent } from "./entities/short-link/short-link-main/short-link-main.component";
+import { ErrorPageComponent } from "./entities/error-page/error-page.component";
 
 const routes: Routes = [
-  { path: "", component: HomeTwoMainComponent },
+  { path: "", component: HomeMainComponent },
   { path: "about", component: AboutMainComponent },
-  { path: "create-multiple", component: CreateMultipleMainComponent },
-  { path: "404", component: ErrorPageMainComponent },
+  { path: "short-link", component: ShortLinkMainComponent },
+  { path: "404", component: ErrorPageComponent },
+  { path: "**", component: ErrorPageComponent },
 ];
 
 @NgModule({

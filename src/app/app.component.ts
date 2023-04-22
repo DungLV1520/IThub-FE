@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import {
   ThemeTogglerService,
   Theme,
-} from "./Bitakon/services/theme-toggler/theme-toggler.service";
+} from "./entities/services/theme-toggler.service";
 import { Router, NavigationEnd } from "@angular/router";
 
 @Component({
