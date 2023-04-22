@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgxSliderModule } from "@angular-slider/ngx-slider";
 import { MatSelectModule } from "@angular/material/select";
 import { MatSliderModule } from "@angular/material/slider";
@@ -33,6 +33,8 @@ import { ErrorPageComponent } from "./error-page/error-page.component";
   imports: [
     CommonModule,
     SwiperModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatSelectModule,
     MatSliderModule,
     RouterModule,

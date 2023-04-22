@@ -159,7 +159,7 @@
     }
   }
   &__input {
-    margin-bottom: 25px;
+    margin-bottom: 11px;
     position: relative;
     &-box {
       & h4 {
@@ -307,7 +307,7 @@
     }
   }
   &__upload {
-    padding: 35px 35px;
+    padding: 5px 35px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px dashed rgba(255, 255, 255, 0.14);
     @include border-radius(30px);

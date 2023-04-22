@@ -44,7 +44,11 @@
             >
               <div class="nft__box-highest w-100">
                 <div class="create__input">
-                  <textarea placeholder="Copy result Link" #text></textarea>
+                  <textarea
+                    placeholder="Copy result Link"
+                    #text
+                    [(ngModel)]="urlULink"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -54,7 +58,7 @@
 
       <div class="col-xxl-8 col-xl-8 col-lg-8">
         <div class="create__form pt-55 pb-4">
-          <form action="#">
+          <form [formGroup]="shortLinkForm" (ngSubmit)="registerLink()">
             <div class="tab-content" id="nav-tabContent">
               <div
                 class="tab-pane fade show active"
@@ -77,42 +81,171 @@
                         id="input-file-2"
                         type="file"
                         (change)="selectFiles($event)"
+                        formControlName="file"
                       />
+                      <div
+                        class="mb-2"
+                        *ngIf="shortLinkForm.get('file')!.invalid"
+                      >
+                        <b
+                          class="form-text text-danger"
+                          *ngIf="shortLinkForm.get('file')?.errors?.required"
+                        >
+                          File is required
+                        </b>
+                      </div>
                     </div>
                   </div>
                   <div class="col-xxl-12">
                     <div class="create__input-box">
                       <h4>Original Link <span>*</span></h4>
                       <div class="create__input mt-2">
-                        <input type="text" placeholder="Enter Original Link " />
+                        <input
+                          type="text"
+                          placeholder="Enter Original Link "
+                          formControlName="originalLink"
+                        />
+                      </div>
+                      <div
+                        class="mb-2"
+                        *ngIf="
+                          shortLinkForm.get('originalLink')!.invalid &&
+                          (shortLinkForm.get('originalLink')!.dirty ||
+                            shortLinkForm.get('originalLink')!.touched)
+                        "
+                      >
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="
+                            shortLinkForm.get('originalLink')?.errors?.required
+                          "
+                        >
+                          Original Link is required
+                        </small>
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="
+                            shortLinkForm.get('originalLink')?.errors?.pattern
+                          "
+                        >
+                          Original Link is invalid URL format
+                        </small>
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="
+                            shortLinkForm.get('originalLink')?.errors?.maxlength
+                          "
+                        >
+                          Original Link max 1000 character
+                        </small>
                       </div>
                     </div>
                   </div>
                   <div class="col-xxl-12">
                     <div class="create__input-box">
-                      <h4>Description</h4>
+                      <h4>Description <span>*</span></h4>
                       <div class="create__input mt-2">
-                        <textarea placeholder="Enter description"></textarea>
+                        <input
+                          type="text"
+                          placeholder="Enter description"
+                          formControlName="description"
+                        />
+                      </div>
+                      <div
+                        class="mb-2"
+                        *ngIf="
+                          shortLinkForm.get('description')!.invalid &&
+                          (shortLinkForm.get('description')!.dirty ||
+                            shortLinkForm.get('description')!.touched)
+                        "
+                      >
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="
+                            shortLinkForm.get('description')?.errors?.required
+                          "
+                        >
+                          Description is required
+                        </small>
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="
+                            shortLinkForm.get('description')?.errors?.maxlength
+                          "
+                        >
+                          Description max 50 character
+                        </small>
                       </div>
                     </div>
                   </div>
                   <div class="col-xxl-12">
                     <div class="create__input-box">
-                      <h4>Properties <span>*</span></h4>
-                      <div class="row mt-2">
-                        <div class="col-md-6">
-                          <div class="create__input">
-                            <input type="text" placeholder="Enter Title" />
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="create__input">
-                            <input
-                              type="text"
-                              placeholder="Enter custom alias"
-                            />
-                          </div>
-                        </div>
+                      <h4>Title <span>*</span></h4>
+                      <div class="create__input mt-2">
+                        <input
+                          type="text"
+                          placeholder="Enter title"
+                          formControlName="title"
+                        />
+                      </div>
+                      <div
+                        class="mb-2"
+                        *ngIf="
+                          shortLinkForm.get('title')!.invalid &&
+                          (shortLinkForm.get('title')!.dirty ||
+                            shortLinkForm.get('title')!.touched)
+                        "
+                      >
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="shortLinkForm.get('title')?.errors?.required"
+                        >
+                          Title is required
+                        </small>
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="shortLinkForm.get('title')?.errors?.maxlength"
+                        >
+                          Title max 50 character
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xxl-12">
+                    <div class="create__input-box">
+                      <h4>Alias Custom</h4>
+                      <div class="create__input mt-2">
+                        <input
+                          type="text"
+                          placeholder="Enter aliasRegister"
+                          formControlName="aliasRegister"
+                        />
+                      </div>
+                      <div
+                        class="m-2"
+                        *ngIf="
+                          shortLinkForm.get('aliasRegister')!.dirty ||
+                          shortLinkForm.get('aliasRegister')!.touched
+                        "
+                      >
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="
+                            shortLinkForm.get('aliasRegister')?.errors
+                              ?.minlength
+                          "
+                        >
+                          Alias min 2 character
+                        </small>
+                        <small
+                          class="form-text text-danger"
+                          *ngIf="
+                            shortLinkForm.get('aliasRegister')?.errors
+                              ?.maxlength
+                          "
+                        >
+                          Alias max 50 character
+                        </small>
                       </div>
                     </div>
                   </div>
@@ -123,10 +256,13 @@
                         <div class="tp-select tp-select-3">
                           <mat-form-field appearance="fill">
                             <mat-label>Select an option</mat-label>
-                            <mat-select disableRipple>
-                              <mat-option value="Article">Article</mat-option>
-                              <mat-option value="Website">Website</mat-option>
-                              <mat-option value="Video">Video</mat-option>
+                            <mat-select
+                              disableRipple
+                              formControlName="displayType"
+                            >
+                              <mat-option value="article">Article</mat-option>
+                              <mat-option value="website">Website</mat-option>
+                              <mat-option value="video.other">Video</mat-option>
                             </mat-select>
                           </mat-form-field>
                         </div>
@@ -135,7 +271,9 @@
                   </div>
                   <div class="col-xxl-12">
                     <div class="create__btn">
-                      <button type="submit" class="tp-btn-3">Create</button>
+                      <button type="submit" class="tp-btn-3">
+                        Create Short Link
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -147,3 +285,37 @@
     </div>
   </div>
 </section>
+
+<ng-template #modal>
+  <section class="team__area">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12">
+          <div class="section__title-wrapper text-center mb-35">
+            <div class="mission__title-wrapper">
+              <h3>We do not create the future. We explore it !!!!!</h3>
+              <p>
+                At ULink, we're excited about create simplify your link sharing
+                with our link shortening service.
+              </p>
+            </div>
+            <div class="create__btn">
+              <div class="footer__social footer__social-2 mb-3">
+                <a href="https://t.me/+NYTzDOvTtEszZjVl" target="_blank"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+                <a href="https://t.me/+NYTzDOvTtEszZjVl" target="_blank"
+                  ><i class="fa-brands fa-telegram"></i
+                ></a>
+              </div>
+              <a href="https://t.me/+NYTzDOvTtEszZjVl" target="_blank">
+                <button type="button" class="tp-btn-3">Contact us</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row"></div>
+    </div>
+  </section>
+</ng-template>

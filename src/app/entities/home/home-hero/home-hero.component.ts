@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
+import { Component, OnInit } from "@angular/core";
 import SwiperCore, { Navigation, EffectFade } from "swiper";
 
 SwiperCore.use([Navigation, EffectFade]);
@@ -10,23 +9,7 @@ SwiperCore.use([Navigation, EffectFade]);
   styleUrls: ["./home-hero.component.scss"],
 })
 export class HomeHeroComponent implements OnInit {
-  @ViewChild("modal") modal: any;
-  constructor(public dialog: MatDialog) {}
+  constructor() {}
 
   ngOnInit(): void {}
-
-  ngAfterViewInit(): void {
-    if (localStorage.getItem("show") !== "true") {
-      setTimeout(() => {
-        this.openDialog(this.modal);
-        localStorage.setItem("show", "true");
-      }, 500);
-    }
-  }
-
-  openDialog(content: any): void {
-    this.dialog.open(content, {
-      width: "1250px",
-    });
-  }
 }

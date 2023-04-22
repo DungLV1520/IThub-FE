@@ -7,7 +7,8 @@ import { ShortLinkMainComponent } from "./entities/short-link/short-link-main/sh
 import { ErrorPageComponent } from "./entities/error-page/error-page.component";
 
 const routes: Routes = [
-  { path: "", component: HomeMainComponent },
+  { path: "", component: ShortLinkMainComponent },
+  { path: "home", component: HomeMainComponent },
   { path: "about", component: AboutMainComponent },
   { path: "short-link", component: ShortLinkMainComponent },
   { path: "404", component: ErrorPageComponent },
