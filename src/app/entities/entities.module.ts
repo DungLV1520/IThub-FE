@@ -23,7 +23,6 @@ import { AboutMissionAreaComponent } from "./about/about-mission-area/about-miss
 import { AboutVideoAreaComponent } from "./about/about-video-area/about-video-area.component";
 import { AboutBrandAreaComponent } from "./about/about-brand-area/about-brand-area.component";
 import { AboutJoinAreaComponent } from "./about/about-join-area/about-join-area.component";
-import { FooterComponent } from "./common/footer/footer.component";
 import { ShortLinkMainComponent } from "./short-link/short-link-main/short-link-main.component";
 import { ShortLinkAreaComponent } from "./short-link/short-link-area/short-link-area.component";
 import { MatDialogModule } from "@angular/material/dialog";
@@ -59,7 +58,6 @@ import { ErrorPageComponent } from "./error-page/error-page.component";
     AboutVideoAreaComponent,
     AboutBrandAreaComponent,
     AboutJoinAreaComponent,
-    FooterComponent,
     ShortLinkMainComponent,
     ShortLinkAreaComponent,
     ErrorPageComponent,

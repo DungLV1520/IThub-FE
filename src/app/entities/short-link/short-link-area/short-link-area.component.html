@@ -3,11 +3,11 @@
   <div class="container">
     <div class="row">
       <div class="col-xxl-4 col-xl-4 col-lg-4 custom-margin">
-        <div class="create__preview mr-30">
+        <div class="create__preview mr-30 mr-0">
           <div class="nft__box theme-bg-dark mb-30 transition-3">
             <h3 class="create__preview-title">Preview</h3>
             <div class="nft__box-thumb w-img mb-20">
-              <a [routerLink]="['/product-details']">
+              <a>
                 <img
                   src="assets/img/bid/bid-img-1.jpg"
                   alt=""
@@ -18,9 +18,7 @@
                 </ng-template>
               </a>
               <div class="nft__box-popularity">
-                <a [routerLink]="['/product-details']"
-                  ><i class="fa-solid fa-heart"></i> 24</a
-                >
+                <a><i class="fa-solid fa-heart"></i> 24</a>
               </div>
             </div>
             <div class="nft__box-content">
@@ -35,6 +33,7 @@
                   style="cursor: pointer"
                   (click)="copyMessage(text)"
                 >
+                  Done
                   <span><i class="fa-solid fa-copy"></i></span>
                 </div>
               </div>
@@ -44,11 +43,12 @@
             >
               <div class="nft__box-highest w-100">
                 <div class="create__input">
-                  <textarea
+                  <input
+                    type="text"
                     placeholder="Copy result Link"
                     #text
                     [(ngModel)]="urlULink"
-                  ></textarea>
+                  />
                 </div>
               </div>
             </div>
@@ -75,8 +75,9 @@
                   </div>
                   <div class="col-xxl-12">
                     <div class="create__upload text-center">
-                      <p>JPG, PNG, GIF Max 5mb.</p>
-                      <label for="input-file-2">Select a file</label>
+                      <label for="input-file-2" style="margin-top: 10px"
+                        >Select a file</label
+                      >
                       <input
                         id="input-file-2"
                         type="file"
